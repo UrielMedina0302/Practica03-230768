@@ -43,4 +43,16 @@ app.get('/session', (req, res)=>{
 })
 
 //Ruta para cerrar la sesion
-app.get('')
+app.get('/logout',(req,res)=>{
+    res.session.destroy((err)=>{
+        if(err){
+            return res.send('Error al cerrar sesion.');
+        }
+        res.send('<h1>Sesión cerrada exitosamente.</h1>');
+    });
+});
+
+//Iniciar el servidor en el puerto 3000
+app.listen(3000,()=>{
+    console.log('Servidor corriendo en el puerto 3000');
+});
