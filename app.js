@@ -32,13 +32,13 @@ app.get('/session', (req, res)=>{
         const lastAcces = req.session.lastAcces;
         const sessionDuration = (new Date() - createdAt) / 1000; // Duración de la sesión en segundos
         
-        res.send{`
+        res.send(`
         <h1>Detalles de la sesión</h1>
         <p><strong>Id de la sesión:</strong> ${SessionId}</p>
         <p><strong>Fecha de creación de la sesión:</strong> ${createdAt}</p>
         <p><strong>Ultimo acceso:</strong> ${lastAcces}</p>
         <p><strong>Duración de la sesión (en segundos):</strong> ${sessionDuration}</p>
-        `};
+        `);
     }
 })
 
