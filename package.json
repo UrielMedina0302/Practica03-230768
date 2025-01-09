@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "init": "^0.1.2"
+  },
+  "name": "mx.utxj.ti.awi4.230768.practica03",
+  "version": "1.0.0",
+  "description": " Repaso de manejo de sesiones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "Session"
+  ],
+  "author": "Uriel Abdallah Medina Torres",
+  "license": "ISC"
+}
