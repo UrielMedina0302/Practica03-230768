@@ -25,12 +25,13 @@ app.use((req, res, next)=> {
 });
 
 // Ruta parta mostrar la información de la sesion
-app.get('/session', (req, res)=>{
+app.get('/session/:name', (req, res)=>{
     if(req.session) {
         const SessionId = req.session.id;
         const createdAt =req.session.createdAt;
         const lastAcces = req.session.lastAcces;
         const sessionDuration = (new Date() - createdAt) / 1000; // Duración de la sesión en segundos
+        const name1=req.params.name;
         
         res.send(`
         <h1>Detalles de la sesión</h1>
@@ -38,6 +39,7 @@ app.get('/session', (req, res)=>{
         <p><strong>Fecha de creación de la sesión:</strong> ${createdAt}</p>
         <p><strong>Ultimo acceso:</strong> ${lastAcces}</p>
         <p><strong>Duración de la sesión (en segundos):</strong> ${sessionDuration}</p>
+        <p><strong>Nombre de quien inicio sesion:</strong> ${name1}</p>
         `);
     }
 })
