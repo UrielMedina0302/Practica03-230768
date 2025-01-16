@@ -1,16 +1,16 @@
 const express =require('express');
 const session =require('express-session');
-const req = require('express/lib/request');
+const moment = require('moment-timezone');//Common JS
 
 const app= express();
 
 
 //Configuracón de la sesión 
 app.use(session({
-    secret: 'mi-clave-secreta', //Secreto para afirmar la cookie de sesión
+    secret: 'P3-UAMT#Sung_jin-Woo-sesionespersistentes', //Secreto para afirmar la cookie de sesión
     resave: false, // No resguardar la sesión si o ha sido modificada
     saveUninitialized: true, //Guarda la sesión aunque no haya sido inicializada
-    cookie: {secure: false} //Usar secure: ture si solo usas HTTPS
+    cookie: {secure: false, maxAge: 24 * 60 * 60 * 1000} //Usar secure: ture si solo usas HTTPS, con maxAge permite definir la duracion máxima de la sesión
 }));
 
 // Middleware para mostrar detalles de la sesión
